@@ -6,6 +6,7 @@ const app = express();
 app.use(bodyParser.json());
 
 app.get('/webhook', (req, res) => {
+    console.log('GET: /webhook');
     const VERIFY = process.env.VERIFY;
 
     const mode = req.query['hub.mode'];
@@ -21,6 +22,7 @@ app.get('/webhook', (req, res) => {
 });
 
 app.post('/webhook', (req, res) => {
+    console.log('POST: /webhook');
     const body = req.body;
 
     console.log(body);
