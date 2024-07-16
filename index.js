@@ -10,6 +10,10 @@ app.use((req, res, next) => {
     next();
 })
 
+app.get('/', (req, res) => {
+    res.send('Health check');
+});
+
 app.get('/webhook', (req, res) => {
     const VERIFY = process.env.VERIFY;
 
